@@ -1,4 +1,6 @@
-﻿namespace ExecuteOS.Server.Modules.TimeTracking.Models
+﻿using ExecuteOS.Server.Common.Enums;
+
+namespace ExecuteOS.Server.Modules.TimeTracking.Models
 {
     public class TimeEntry
     {
@@ -8,8 +10,8 @@
         public DateTime StartTime { get; set; }
         public DateTime? EndTime { get; set; }
         public TimeSpan Duration { get; set; }
-        public string Description { get; set; }
-        public string Category { get; set; }
+        public string Description { get; set; } = string.Empty;
+        public Category Category { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 
