@@ -1,6 +1,10 @@
 ﻿namespace ExecuteOS.Server.Common.Enums
 {
-    public class Category
+    public enum Category
     {
+        Programming,
+        Languages,
+        Reading,
+        Meditation
     }
 }
