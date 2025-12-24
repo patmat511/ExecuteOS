@@ -104,5 +104,22 @@ namespace ExecuteOS.Server.Controllers
             }
         }
 
+        [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<TaskDto>> Delete(Guid id, CancellationToken cancellationToken)
+        {
+            try
+            {
+                await _taskService.DeleteTaskAsync(id, cancellationToken);
+                return NoContent();
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { error = ex.Message });
+            }
+        }
+
     }
 }
