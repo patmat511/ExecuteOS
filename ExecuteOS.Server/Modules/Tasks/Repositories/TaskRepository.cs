@@ -36,7 +36,7 @@ namespace ExecuteOS.Server.Modules.Tasks.Repositories
                  .AnyAsync(t => t.Id == id, cancellationToken);
         }
 
-        public async Task<List<TaskItem>> GetAllAsnync(CancellationToken cancellationToken = default)
+        public async Task<List<TaskItem>> GetAllAsync(CancellationToken cancellationToken = default)
         {
             return await _context.Tasks
                 .AsNoTracking()

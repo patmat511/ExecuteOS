@@ -28,5 +28,12 @@ namespace ExecuteOS.Server.Modules.Tasks.Models
 
         }
 
+        public TaskItem()
+        {
+            Id = Guid.NewGuid();
+            CreatedAt = DateTime.UtcNow;
+            UpdatedAt = DateTime.UtcNow;
+        }
+
     }
 }

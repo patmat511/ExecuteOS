@@ -9,6 +9,6 @@ namespace ExecuteOS.Server.Modules.Tasks.Services
         Task<List<TaskDto>> GetByStatusAsync(string status, CancellationToken cancellationToken = default);
         Task<TaskDto> CreateTaskAsync(CreateTaskDto dto, CancellationToken cancellationToken = default);
         Task<TaskDto> UpdateTaskAsync(Guid id, UpdateTaskDto dto, CancellationToken cancellationToken = default);
-        Task<TaskDto> DeleteTaskAsync(Guid id, CancellationToken cancellationToken = default);
+        Task DeleteTaskAsync(Guid id, CancellationToken cancellationToken = default);
     }
 }

@@ -5,7 +5,7 @@ namespace ExecuteOS.Server.Modules.Tasks.Repositories
 {
     public interface ITaskRepository
     {
-        Task<List<TaskItem>> GetAllAsnync(CancellationToken cancellationToken = default);
+        Task<List<TaskItem>> GetAllAsync(CancellationToken cancellationToken = default);
         Task<TaskItem?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
         Task<List<TaskItem>> GetByUserIdAsync(Guid userId, CancellationToken cancellationToken = default);
         Task<List<TaskItem>> GetByStatusAsync(Status status, CancellationToken cancellationToken = default);
