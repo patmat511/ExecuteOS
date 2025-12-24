@@ -1,7 +1,7 @@
 ﻿using ExecuteOS.Server.Common.Enums;
 using ExecuteOS.Server.Modules.Tasks.Models;
 
-namespace ExecuteOS.Server.Modules.Tasks.Interfaces
+namespace ExecuteOS.Server.Modules.Tasks.Repositories
 {
     public interface ITaskRepository
     {
