@@ -45,11 +45,11 @@ namespace ExecuteOS.Server.Modules.Tasks.Services
             await _repository.DeleteAsync(id, cancellationToken);
         }
 
-        public async Task<List<TaskDto>> GetAllAsync(CancellationToken cancellationToken = default)
+        public async Task<IEnumerable<TaskDto>> GetAllAsync(CancellationToken cancellationToken = default)
         {
             var tasks = await _repository.GetAllAsync(cancellationToken);
 
-            return tasks.Select(MapToDto).ToList(); 
+            return tasks.Select(MapToDto);
         }
 
         public async Task<TaskDto> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
@@ -62,14 +62,14 @@ namespace ExecuteOS.Server.Modules.Tasks.Services
             return MapToDto(task);
         }
 
-        public async Task<List<TaskDto>> GetByStatusAsync(string status, CancellationToken cancellationToken = default)
+        public async Task<IEnumerable<TaskDto>> GetByStatusAsync(string status, CancellationToken cancellationToken = default)
         {
             if(!Enum.TryParse<Status>(status, out var parsedStatus))
                 throw new ArgumentException($"Invalid status value: {status}");
             
             var tasks = await _repository.GetByStatusAsync(parsedStatus, cancellationToken);
 
-            return tasks.Select(MapToDto).ToList();
+            return tasks.Select(MapToDto);
         }
 
         public async Task<TaskDto> UpdateTaskAsync(Guid id, UpdateTaskDto dto, CancellationToken cancellationToken = default)
