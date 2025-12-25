@@ -15,10 +15,6 @@ namespace ExecuteOS.Server.Modules.TimeTracking.Repositories
 
         public async Task<TimeEntry> CreateAsync(TimeEntry timeEntry, CancellationToken cancellationToken = default)
         {
-            var now = DateTime.UtcNow;
-            timeEntry.CreatedAt = now;
-            timeEntry.UpdatedAt = now;
-
             _context.TimeEntries.Add(timeEntry);
             await _context.SaveChangesAsync(cancellationToken);
             return timeEntry;

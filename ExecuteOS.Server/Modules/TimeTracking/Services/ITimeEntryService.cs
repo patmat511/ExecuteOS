@@ -12,7 +12,7 @@ namespace ExecuteOS.Server.Modules.TimeTracking.Services
         Task<TimeEntryDto> StartTimeAsync(CreateTimeEntryDto dto, CancellationToken cancellationToken = default);
         Task<TimeEntryDto> StopTimeAsync(Guid id, CancellationToken cancellationToken = default);
         Task<TimeEntryDto> CreateAsync(CreateTimeEntryDto dto, CancellationToken cancellationToken = default);
-        Task<TimeEntryDto> UpdateAsync(UpdateTimeEntryDto dto, CancellationToken cancellationToken = default);
+        Task<TimeEntryDto> UpdateAsync(Guid id, UpdateTimeEntryDto dto, CancellationToken cancellationToken = default);
         Task DeleteAsync(Guid id, CancellationToken cancellationToken = default);
     }
 }
