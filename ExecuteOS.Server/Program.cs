@@ -1,6 +1,8 @@
 using ExecuteOS.Server.Data;
 using ExecuteOS.Server.Modules.Tasks.Repositories;
 using ExecuteOS.Server.Modules.Tasks.Services;
+using ExecuteOS.Server.Modules.TimeTracking.Repositories;
+using ExecuteOS.Server.Modules.TimeTracking.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +21,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 builder.Services.AddScoped<ITaskService, TaskService>();
+
+builder.Services.AddScoped<ITimeEntryRepository, TimeEntryRepository>();
+builder.Services.AddScoped<ITimeEntryService, TimeEntryService>();
 
 // CORS for Angular
 builder.Services.AddCors(options =>
