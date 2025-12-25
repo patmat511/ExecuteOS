@@ -1,4 +1,5 @@
 ﻿using ExecuteOS.Server.Modules.Tasks.Models;
+using ExecuteOS.Server.Modules.TimeTracking.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ExecuteOS.Server.Data
@@ -10,6 +11,7 @@ namespace ExecuteOS.Server.Data
             
         }
         public DbSet<TaskItem> Tasks { get; set; }
+        public DbSet<TimeEntry> TimeEntries { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
