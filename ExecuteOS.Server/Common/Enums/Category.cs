@@ -2,9 +2,9 @@
 {
     public enum Category
     {
-        Programming,
-        Languages,
-        Reading,
-        Meditation
+        Programming = 0,
+        Languages = 1,
+        Reading = 2,
+        Meditation = 3
     }
 }
