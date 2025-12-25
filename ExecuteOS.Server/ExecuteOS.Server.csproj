@@ -20,10 +20,12 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.11">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,9 +35,21 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
-    <Folder Include="Data\" />
+    <Folder Include="Common\Exceptions\" />
+    <Folder Include="Common\Extensions\" />
+    <Folder Include="Common\Constants\" />
+    <Folder Include="Data\Configurations\" />
+    <Folder Include="Modules\Analytics\Models\" />
+    <Folder Include="Modules\Analytics\Services\" />
+    <Folder Include="Modules\Tasks\Enums\" />
+    <Folder Include="Modules\Tasks\Validators\" />
+    <Folder Include="Modules\TimeTracking\DTOs\" />
+    <Folder Include="Modules\TimeTracking\Validators\" />
+    <Folder Include="Modules\TimeTracking\Services\" />
+    <Folder Include="Modules\TimeTracking\Repositories\" />
+    <Folder Include="Modules\Users\Services\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Middleware\" />
   </ItemGroup>
 
 </Project>
